@@ -48,7 +48,7 @@ export default function SignUp() {
 
             </div>
             <Button gradientDuoTone="greenToBlue" outline type='submit'>
-              Sign Up
+              إنشاء حساب جديد
             </Button>
           </form>
           <div className="flex gap-2 text-sm mt-5">
