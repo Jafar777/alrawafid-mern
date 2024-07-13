@@ -13,7 +13,7 @@ export default function Header() {
     
 
     <Navbar className='border-b-2'>
-      <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl'><img src={alrawafid} alt="" className='w-28 h-28'/></Link>
+      <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl'><img src={alrawafid} className='w-28 h-28'/></Link>
       <form >
         <TextInput
         type='text'
