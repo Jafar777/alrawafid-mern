@@ -6,6 +6,7 @@ import {AiOutlineSearch} from 'react-icons/ai';
 import { FaMoon,FaSun } from "react-icons/fa";
 import {useSelector,useDispatch} from 'react-redux';
 import {toggleTheme} from '../redux/theme/themeSlice';
+import { signOutSuccess } from '../redux/user/userSlice';
 
 
 export default function Header() {
@@ -14,6 +15,22 @@ export default function Header() {
   const {currentUser} = useSelector(state => state.user)
   const path = useLocation().pathname;
   const {theme} = useSelector((state)=> state.theme);
+  const handleSignOut = async () =>{
+    try {
+        const res = await fetch('/api/user/signout' , {
+            method: 'POST',
+        })
+        const data = await res.json();
+        if(!res.ok){
+            console.log(data.message);
+        }else{
+            dispatch(signOutSuccess())
+        }
+    } catch (error) {
+        console.log(error.message)
+        
+    }
+}
   return (
     
 
@@ -31,7 +48,7 @@ export default function Header() {
         <AiOutlineSearch  />
       </Button>
       <div className='flex gap-2 md:order-2'>
-        <Button className='w-12 h-10 hidden sm:inline' color='gray' pill onClick={()=>dispatch(toggleTheme())}>
+        <Button className='w-12 h-10 hidden sm:inline' color='gray' pill onClick={() => dispatch(toggleTheme())}>
           {theme === 'light'? <FaSun/>:<FaMoon/>}
           
         </Button>
@@ -57,7 +74,7 @@ export default function Header() {
               الحساب
             </Dropdown.Item>
             <DropdownDivider />
-            <Dropdown.Item>تسجيل الخروج</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignOut}>تسجيل الخروج</Dropdown.Item>
           </Link>
 
           </Dropdown>

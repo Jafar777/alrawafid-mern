@@ -40,8 +40,8 @@ export default function OAuth() {
         }
     }
   return (
-    <Button outline gradientDuoTone="cyanToBlue" type='button'>
-        <FcGoogle className='w-6 h-6 mr-2' onClick={handleGoogleClick}/> 
+    <Button outline gradientDuoTone="cyanToBlue" type='button' onClick={handleGoogleClick}>
+        <FcGoogle className='w-6 h-6 mr-2' /> 
         Google المتابعة باستخدام  
     </Button>
   )
