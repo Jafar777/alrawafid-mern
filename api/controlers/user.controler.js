@@ -44,5 +44,16 @@ export const updateUser = async (req , res , next ) => {
         }catch (error){
             next(error);
         }
-    
+}
+export  const deleteUser = async (req, res,next) => {
+
+    if (req.user.id !== req.params.userId){
+        return next(errorHanlder(403, 'غير مسموح لك بحذف هذا الحساب'))
+    }
+    try {
+        await User.findByIdAndDelete(req.params.userId);
+        res.status(200).json('تم حذف الحساب');
+    } catch (error) {
+        next(error)
+    }
 }
