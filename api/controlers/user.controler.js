@@ -26,8 +26,10 @@ export const updateUser = async (req , res , next ) => {
             return next(errorHanlder(400 , " اكتب اسم المستخد بحروف صغيرة فقط " ))
         }
         if (req.body.username.match(/^[a-zA-Z0-9]+&/)){
-            return next(errorHanlder(400 , " اسم السمتخدم يجب ان يكون مكون من حروف وارقام فقط تجنب استخدام الرموز" ))
+            return next(errorHanlder(400 , " اسم السمتخدم يجب ان يكون مكون من حروف وارقام فقط تجنب استخدام الرموز" )
+        );
         }
+    }
         try {
             const updatedUser = await User.findByIdAndUpdate(req.params.userId,{
                 $set:{
@@ -42,5 +44,5 @@ export const updateUser = async (req , res , next ) => {
         }catch (error){
             next(error);
         }
-    }
+    
 }
