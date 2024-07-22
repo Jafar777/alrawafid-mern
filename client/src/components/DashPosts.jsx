@@ -73,13 +73,13 @@ console.log(userPosts);
         <>
         <Table hoverable className='shadow-md'>
             <Table.Head>
-                <Table.HeadCell>Data updated</Table.HeadCell>
-                <Table.HeadCell>Post Image</Table.HeadCell>
-                <Table.HeadCell>Post title</Table.HeadCell>
-                <Table.HeadCell>Category</Table.HeadCell>
-                <Table.HeadCell>Delete</Table.HeadCell>
+                <Table.HeadCell>تاريخ التعديل</Table.HeadCell>
+                <Table.HeadCell>صورة العرض </Table.HeadCell>
+                <Table.HeadCell>عنوان العرض </Table.HeadCell>
+                <Table.HeadCell>نوع العرض</Table.HeadCell>
+                <Table.HeadCell>الحذف</Table.HeadCell>
                 <Table.HeadCell>
-                    <span>Edit</span>
+                    <span>التعديل</span>
                 </Table.HeadCell>
             </Table.Head>
             {userPosts.map((post)=>(
@@ -108,12 +108,14 @@ console.log(userPosts);
                                     setshowModal(true);
                                     setPostIdToDelete(post._id);
                                 }} className='font-medium text-red-500 hover:underline cursor-pointer'>
-                                    Delete
+                                    حذف
                                 </span>
                             </Table.Cell>
                             <Table.Cell>
                                 <Link className='text-teal-500 hover:underline ' to={`/update-post/${post._id}`}>
-                                <span>Edit</span>
+                                <span>
+                                    تعديل 
+                                </span>
                                 </Link>
                                 
                             </Table.Cell>
@@ -124,7 +126,7 @@ console.log(userPosts);
         {
             showMore && (
                 <button onClick={handleShowMore} className='w-full text-teal-500 self-center text-sm py-7'>
-                    show more
+                    اظهار المزيد المزيد
                 </button>
             )
         }
