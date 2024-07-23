@@ -10,7 +10,7 @@ const {currentUser} = useSelector((state) => state.user)
 const [users, setUsers] = useState([])
 const [showMore, setShowMore] = useState(true);
 const [showModal, setshowModal] = useState(false);
-const [userIdToDelete, setuserIdToDelete] = useState('');
+const [userIdToDelete, setUserIdToDelete] = useState('');
 
     useEffect(()=>{
         const fetchUsers = async ()=>{
@@ -47,7 +47,22 @@ const [userIdToDelete, setuserIdToDelete] = useState('');
             console.log(error.message)
         }
     }
-    const handleDeleteUser = async () => {};
+    const handleDeleteUser = async () => {
+        try {
+            const res = await fetch(`/api/user/delete${userIdToDelete}`,{
+                method: 'DELETE',
+            });
+            const data = await res.json();
+            if (res.ok){
+                setUsers((prev) => prev.filter((user) => user._id !== userIdToDelete));
+                setshowModal(false);
+            }else{
+                console.log(data.message);
+            }
+        } catch (error) {
+            console.log(error.message)
+        }
+    };
     
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
