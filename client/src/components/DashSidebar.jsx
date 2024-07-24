@@ -60,7 +60,7 @@ export default function DashSidebar() {
               icon={HiDocumentText}
               as='div'
               >
-                العروض العقارية
+                الطلبات العقارية
             </Sidebar.Item>
             </Link>
             )}

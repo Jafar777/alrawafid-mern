@@ -74,9 +74,9 @@ console.log(userPosts);
         <Table hoverable className='shadow-md'>
             <Table.Head>
                 <Table.HeadCell>تاريخ التعديل</Table.HeadCell>
-                <Table.HeadCell>صورة العرض </Table.HeadCell>
-                <Table.HeadCell>عنوان العرض </Table.HeadCell>
-                <Table.HeadCell>نوع العرض</Table.HeadCell>
+                <Table.HeadCell>صورة الطلب </Table.HeadCell>
+                <Table.HeadCell>عنوان الطلب </Table.HeadCell>
+                <Table.HeadCell>نوع الطلب</Table.HeadCell>
                 <Table.HeadCell>الحذف</Table.HeadCell>
                 <Table.HeadCell>
                     <span>التعديل</span>
