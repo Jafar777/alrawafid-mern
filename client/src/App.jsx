@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Signin from './pages/Signin'
 import SignUp from './pages/SignUp'
 import Dashboard from './pages/Dashboard'
-import Projects from './pages/Projects'
+import ListingSearch from './pages/ListingSearch'
 import Header from './components/Header'
 import FooterCom from './components/Footer'
 import PrivateRoute from './components/PrivateRoute'
@@ -13,6 +13,8 @@ import CreatePost from './pages/CreatePost'
 import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute'
 import UpdatePost from './pages/UpdatePost'
 import PostPage from './pages/PostPage'
+import Contact from './pages/Contact'
+import Search from './pages/Search'
 export default function App() {
   return (
     <BrowserRouter >
@@ -22,8 +24,12 @@ export default function App() {
         <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<Signin />}/>
         <Route path='/sign-up' element={<SignUp />}/>
+        
+        <Route path='/listingsearch' element={<ListingSearch />} />
+
 
         <Route element={<PrivateRoute/>}>
+        <Route path='/search' element={<Search />}/>
         <Route path='/dashboard' element={<Dashboard />}/>
         </Route>
         <Route element={<OnlyAdminPrivateRoute/>}>
@@ -32,8 +38,7 @@ export default function App() {
         </Route>
         
         
-        
-        <Route path='/projects' element={<Projects />}/>
+        <Route path='/contact' element={<Contact />}/>
         <Route path='/post/:postSlug' element={<PostPage />}/>
       </Routes>
       <FooterCom/>

@@ -1,20 +1,35 @@
 import { Avatar, Button, Dropdown, DropdownDivider, Navbar, TextInput } from 'flowbite-react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import alrawafid from "../assets/alrawafid.png"
-import { Link,useLocation } from 'react-router-dom'
+import { Link,useLocation,useNavigate } from 'react-router-dom'
 import {AiOutlineSearch} from 'react-icons/ai';
 import { FaMoon,FaSun } from "react-icons/fa";
 import {useSelector,useDispatch} from 'react-redux';
 import {toggleTheme} from '../redux/theme/themeSlice';
 import { signOutSuccess } from '../redux/user/userSlice';
-
+import { useState } from 'react';
 
 export default function Header() {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
   const {currentUser} = useSelector(state => state.user)
   const path = useLocation().pathname;
   const {theme} = useSelector((state)=> state.theme);
+  
+  const [searchTerm , setSearchTerm]= useState('');
+
+
+
+  useEffect(()=> {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get('searchTerm');
+    if (searchTermFromUrl){
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search])
+
   const handleSignOut = async () =>{
     try {
         const res = await fetch('/api/user/signout' , {
@@ -30,15 +45,24 @@ export default function Header() {
         console.log(error.message)
         
     }
+};
+const handleSubmit = (e) =>{
+  e.preventDefault();
+  const urlParams = new URLSearchParams(location.search);
+  urlParams.set('searchTerm',searchTerm);
+  const searchQuery = urlParams.toString();
+  navigate(`/search?${searchQuery}`)
 }
   return (
     
 
     <Navbar className='border-b-2'>
       <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl'><img src={alrawafid} className='w-28 h-28'/></Link>
-      <form >
+      <form onSubmit={handleSubmit}>
         <TextInput
         type='text'
+        value={searchTerm}
+        onChange={(e)=> setSearchTerm(e.target.value)}
         placeholder='بحث'
         rightIcon={AiOutlineSearch}
         className='hidden lg:inline'
@@ -91,10 +115,10 @@ export default function Header() {
             <Link to='/'>الصفحة الرئيسية</Link>
           </Navbar.Link>
           <Navbar.Link active={path === "/about"} as={'div'}>
-            <Link to='/about'>نبذة</Link>
+            <Link to='/about'> نبذة عنا</Link>
           </Navbar.Link>
-          <Navbar.Link active={path === "/projects"} as={'div'}>
-            <Link to='/projects' >العروض العقارية</Link>
+          <Navbar.Link active={path === "/contact"} as={'div'}>
+            <Link to='/contact' > تواصل</Link>
           </Navbar.Link>
         </Navbar.Collapse>
     </Navbar>

@@ -1,5 +1,5 @@
 import { current } from '@reduxjs/toolkit';
-import { Button, Modal, Table } from 'flowbite-react';
+import { Button, Modal, Spinner, Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { useSelector } from 'react-redux'
@@ -11,13 +11,16 @@ const [userPosts, setUserPosts] = useState([])
 const [showMore, setShowMore] = useState(true);
 const [showModal, setshowModal] = useState(false);
 const [postIdToDelete, setPostIdToDelete] = useState('');
-console.log(userPosts);
+const [loading ,setLoading] = useState(true);
+
     useEffect(()=>{
         const fetchPosts = async ()=>{
             try {
+                setLoading(true);
                 const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`)
                 const data = await res.json()
                 if (res.ok){
+                    setLoading(false);
                     setUserPosts(data.posts);
                     if(data.posts.length<9){
                         setShowMore(false);
@@ -25,12 +28,14 @@ console.log(userPosts);
                 }
             } catch (error) {
                 console.log(error.message)
+                setLoading(false);
             }
         };
         if(currentUser.isAdmin) {
             fetchPosts()
         }
     },[currentUser._id])
+    
 
     const handleShowMore = async() =>{
         const startIndex = userPosts.length;
@@ -67,11 +72,25 @@ console.log(userPosts);
         }
 
     }
+    if (loading) return (
+        <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+            <Spinner size='xl'></Spinner>
+        </div>
+        );
   return (
+    
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
+        <div className="">
+            <Link to='/search' className='text=sm sm:text-sm text-teal-500 font-bold hover:underline'>
+            <h3 className='text-right'>رؤية جميع الطلبات العقارية</h3>
+             
+            </Link>
+        </div>
+        <h1 className='my-7 text-center font-semibold text-3xl'>طلباتك التي نشرتها</h1>
         <Table hoverable className='shadow-md'>
+            
             <Table.Head>
                 <Table.HeadCell>تاريخ التعديل</Table.HeadCell>
                 <Table.HeadCell>صورة الطلب </Table.HeadCell>
@@ -126,17 +145,17 @@ console.log(userPosts);
         {
             showMore && (
                 <button onClick={handleShowMore} className='w-full text-teal-500 self-center text-sm py-7'>
-                    اظهار المزيد المزيد
+                    اظهار المزيد
                 </button>
             )
         }
         </>
       ): (
-        <p>You have no posts yet!</p>
+        <p>ليس هنالك اي عرض عقاري حتى الان</p>
       )}
-      <Modal show={showModal} onClose={()=> setshowModal(false)} popup size='md'> 
-        <Modal.Header />
-        <Modal.Body>
+      <Modal show={showModal} onClose={()=> setshowModal(false)}    popup size='md'> 
+         <Modal.Header />
+            <Modal.Body>
             <div className="text-center">
                 <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 bg-4 mx-auto'/>
                 <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>هل انت متأكد انك تريد حذف هذا العرض العقاري ؟</h3>
@@ -151,10 +170,11 @@ console.log(userPosts);
                 </div>
             </div>
             
-        </Modal.Body>
+            </Modal.Body>
         
 
-    </Modal>
+        </Modal>
     </div>
+    
   )
 }

@@ -1,5 +1,5 @@
 import { current } from '@reduxjs/toolkit';
-import { Button, Modal, Table } from 'flowbite-react';
+import { Button, Modal, Spinner, Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { useSelector } from 'react-redux'
@@ -11,19 +11,23 @@ const [users, setUsers] = useState([])
 const [showMore, setShowMore] = useState(true);
 const [showModal, setshowModal] = useState(false);
 const [userIdToDelete, setUserIdToDelete] = useState('');
+const [loading ,setLoading] = useState(true);
 
     useEffect(()=>{
+        setLoading(true);
         const fetchUsers = async ()=>{
             try {
                 const res = await fetch(`/api/user/getusers?userId=${currentUser._id}`)
                 const data = await res.json()
                 if (res.ok){
+                    setLoading(false);
                     setUsers(data.users);
                     if(data.users.length < 9){
                         setShowMore(false);
                     }
                 }
             } catch (error) {
+                setLoading(false);
                 console.log(error.message)
             }
         };
@@ -63,6 +67,11 @@ const [userIdToDelete, setUserIdToDelete] = useState('');
             console.log(error.message)
         }
     };
+    if (loading) return (
+        <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+            <Spinner size='xl'></Spinner>
+        </div>
+        );
     
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>

@@ -5,6 +5,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { signOutSuccess } from '../redux/user/userSlice'
 import { useSelector } from 'react-redux' 
+import { LuFiles } from "react-icons/lu";
+import { CiFileOn } from "react-icons/ci";
 
 export default function DashSidebar() {
     const dispatch = useDispatch();
@@ -57,13 +59,14 @@ export default function DashSidebar() {
               <Link to='/dashboard?tab=posts'>
             <Sidebar.Item
               active={tab === 'posts'}
-              icon={HiDocumentText}
+              icon={CiFileOn}
               as='div'
               >
-                الطلبات العقارية
+              طلباتي العقارية
             </Sidebar.Item>
             </Link>
             )}
+
             {currentUser.isAdmin && (
               <Link to='/dashboard?tab=users'>
             <Sidebar.Item
