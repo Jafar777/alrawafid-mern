@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
-import { Button } from 'flowbite-react';
+import { Button, TextInput } from 'flowbite-react';
 
 export default function Search() {
   const navigate = useNavigate();
@@ -133,25 +133,26 @@ export default function Search() {
       <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
-            <label className='whitespace-nowrap font-semibold'>
-              البحث
-            </label>
-            <input
+            
+            <TextInput
               type='text'
               id='searchTerm'
               placeholder='Search...'
-              className='border rounded-lg p-3 w-full'
+              
               value={sidebardata.searchTerm}
               onChange={handleChange}
             />
+            <label className='whitespace-nowrap font-semibold'>
+              البحث
+            </label>
           </div>
-          <div className='flex gap-2 flex-wrap items-center'>
-            <label className='font-semibold'>نوع العقار</label>
+          <div className='flex flex-col gap-4 '>
+            <label className='font-semibold '>نوع العقار</label>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='all'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={sidebardata.type === 'all'}
               />
@@ -161,7 +162,7 @@ export default function Search() {
               <input
                 type='checkbox'
                 id='rent'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={sidebardata.type === 'rent'}
               />
@@ -171,7 +172,7 @@ export default function Search() {
               <input
                 type='checkbox'
                 id='sale'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={sidebardata.type === 'sale'}
               />
@@ -181,20 +182,20 @@ export default function Search() {
               <input
                 type='checkbox'
                 id='offer'
-                className='w-5'
+               className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={sidebardata.offer}
               />
-              <span>عرض</span>
+              <span> عرض خاص</span>
             </div>
-          </div>
-          <div className='flex gap-2 flex-wrap items-center'>
+            </div>
+          <div className='flex flex-col gap-2 '>
             <label className='font-semibold'>وسائل الراحة</label>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='parking'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={sidebardata.parking}
               />
@@ -204,7 +205,7 @@ export default function Search() {
               <input
                 type='checkbox'
                 id='furnished'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={sidebardata.furnished}
               />
@@ -212,18 +213,19 @@ export default function Search() {
             </div>
           </div>
           <div className='flex items-center gap-2'>
-            <label className='font-semibold'>ترتيب</label>
+            
             <select
               onChange={handleChange}
               defaultValue={'created_at_desc'}
               id='sort_order'
-              className='border rounded-lg p-3'
+              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"'
             >
               <option value='regularPrice_desc'>السعر الاعلى</option>
               <option value='regularPrice_asc'>السعر الاقل</option>
               <option value='createdAt_desc'>الاحدث</option>
               <option value='createdAt_asc'>الاقدم</option>
             </select>
+            <label className='font-semibold'>ترتيب</label>
           </div>
           <Button type='submit' outline gradientDuoTone='purpleToPink'>
             بحث

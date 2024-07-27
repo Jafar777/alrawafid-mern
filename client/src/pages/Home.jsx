@@ -5,9 +5,9 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
-import { IoArrowForwardOutline } from "react-icons/io5";
 import { Button } from 'flowbite-react';
 import { HiOutlineArrowRight } from 'react-icons/hi';
+
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -60,7 +60,7 @@ export default function Home() {
         <div className=' text-xs sm:text-sm text-right'>
           تصفح اخر العروض العقارية المثالية عبر منصتنا الالكترونية 
           <br />
-          لدينا مجموعة واسعة من العروض العقارية من أجل انت تختار منها 
+          لدينا مجموعة واسعة من العروض العقارية من أجلك , لتختار منها 
         </div>
         <Link
           
@@ -96,8 +96,8 @@ export default function Home() {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>آخر العروض</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>عرض المزيد</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {offerListings.map((listing) => (
@@ -109,8 +109,11 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>
+                بعض عروض الإيجار
+              </h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>
+              عرض المزيد</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {rentListings.map((listing) => (

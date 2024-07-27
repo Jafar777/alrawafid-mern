@@ -8,8 +8,13 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Button, Textarea, TextInput } from 'flowbite-react';
+
+
+
 
 export default function CreateListing() {
+ 
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [files, setFiles] = useState([]);
@@ -31,7 +36,8 @@ export default function CreateListing() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(formData);
+
+  //console.log(formData);
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
@@ -153,17 +159,22 @@ export default function CreateListing() {
       setLoading(false);
     }
   };
+
+  
+
+
+
+
   return (
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
-        Create a Listing
+        إنشاء العرض
       </h1>
       <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
         <div className='flex flex-col gap-4 flex-1'>
-          <input
+          <TextInput
             type='text'
-            placeholder='Name'
-            className='border p-3 rounded-lg'
+            placeholder='اسم العقار'
             id='name'
             maxLength='62'
             minLength='10'
@@ -171,19 +182,18 @@ export default function CreateListing() {
             onChange={handleChange}
             value={formData.name}
           />
-          <textarea
+          <Textarea
             type='text'
-            placeholder='Description'
-            className='border p-3 rounded-lg'
+            placeholder='وصف العقار'
+            
             id='description'
             required
             onChange={handleChange}
             value={formData.description}
           />
-          <input
+          <TextInput
             type='text'
-            placeholder='Address'
-            className='border p-3 rounded-lg'
+            placeholder='العنوان'
             id='address'
             required
             onChange={handleChange}
@@ -194,51 +204,51 @@ export default function CreateListing() {
               <input
                 type='checkbox'
                 id='sale'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={formData.type === 'sale'}
               />
-              <span>Sell</span>
+              <span>بيع</span>
             </div>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='rent'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={formData.type === 'rent'}
               />
-              <span>Rent</span>
+              <span>إيجار</span>
             </div>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='parking'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={formData.parking}
               />
-              <span>Parking spot</span>
+              <span>مواقف سيارات</span>
             </div>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='furnished'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={formData.furnished}
               />
-              <span>Furnished</span>
+              <span>مفروش</span>
             </div>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
                 id='offer'
-                className='w-5'
+                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 onChange={handleChange}
                 checked={formData.offer}
               />
-              <span>Offer</span>
+              <span>عرض</span>
             </div>
           </div>
           <div className='flex flex-wrap gap-6'>
@@ -249,12 +259,17 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='p-3 border border-gray-300 rounded-lg'
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
-              <p>Beds</p>
+              <p>غرف النوم</p>
             </div>
+            
+           
+
+
+
             <div className='flex items-center gap-2'>
               <input
                 type='number'
@@ -262,12 +277,19 @@ export default function CreateListing() {
                 min='1'
                 max='10'
                 required
-                className='p-3 border border-gray-300 rounded-lg'
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
-              <p>Baths</p>
+              <p>الحمامات</p>
             </div>
+
+
+
+
+
+
+
             <div className='flex items-center gap-2'>
               <input
                 type='number'
@@ -275,14 +297,14 @@ export default function CreateListing() {
                 min='50'
                 max='10000000'
                 required
-                className='p-3 border border-gray-300 rounded-lg'
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
               <div className='flex flex-col items-center'>
-                <p>Regular price</p>
+                <p>السعر</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>($ / شهريا)</span>
                 )}
               </div>
             </div>
@@ -294,15 +316,16 @@ export default function CreateListing() {
                   min='0'
                   max='10000000'
                   required
-                  className='p-3 border border-gray-300 rounded-lg'
+                  className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
+                
                 <div className='flex flex-col items-center'>
-                  <p>Discounted price</p>
+                  <p>السعر المخفض</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>($ / شهريا)</span>
                   )}
                 </div>
               </div>
@@ -311,7 +334,7 @@ export default function CreateListing() {
         </div>
         <div className='flex flex-col flex-1 gap-4'>
           <p className='font-semibold'>
-            Images:
+            Images :
             <span className='font-normal text-gray-600 ml-2'>
               The first image will be the cover (max 6)
             </span>
@@ -325,14 +348,13 @@ export default function CreateListing() {
               accept='image/*'
               multiple
             />
-            <button
+            <Button outline gradientDuoTone="greenToBlue"
               type='button'
               disabled={uploading}
               onClick={handleImageSubmit}
-              className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'
             >
-              {uploading ? 'Uploading...' : 'Upload'}
-            </button>
+              {uploading ? 'جاري التحميل' : 'تحميل'}
+            </Button>
           </div>
           <p className='text-red-700 text-sm'>
             {imageUploadError && imageUploadError}
@@ -353,16 +375,17 @@ export default function CreateListing() {
                   onClick={() => handleRemoveImage(index)}
                   className='p-3 text-red-700 rounded-lg uppercase hover:opacity-75'
                 >
-                  Delete
+                  حذف
                 </button>
               </div>
             ))}
-          <button
+          <Button outline gradientDuoTone="purpleToPink"
+          type='submit'
             disabled={loading || uploading}
-            className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+            
           >
-            {loading ? 'Creating...' : 'Create listing'}
-          </button>
+            {loading ? 'Creating...' : 'نشر العرض'}
+          </Button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
       </form>

@@ -15,6 +15,8 @@ import UpdatePost from './pages/UpdatePost'
 import PostPage from './pages/PostPage'
 import Contact from './pages/Contact'
 import Search from './pages/Search'
+import CreateListing from './pages/CreateListing'
+import Listing from './pages/Listing'
 export default function App() {
   return (
     <BrowserRouter >
@@ -26,6 +28,7 @@ export default function App() {
         <Route path='/sign-up' element={<SignUp />}/>
         
         <Route path='/listingsearch' element={<ListingSearch />} />
+        <Route path='/listing/:listingId' element={<Listing />} />
 
 
         <Route element={<PrivateRoute/>}>
@@ -35,6 +38,7 @@ export default function App() {
         <Route element={<OnlyAdminPrivateRoute/>}>
         <Route path='/create-post' element={<CreatePost />}/>
         <Route path='/update-post/:postId' element={<UpdatePost />}/>
+        <Route path='/create-listing' element={<CreateListing />} />
         </Route>
         
         
