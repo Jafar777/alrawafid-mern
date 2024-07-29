@@ -96,8 +96,8 @@ export default function Home() {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>آخر العروض</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/listingsearch?offer=true'}>عرض المزيد</Link>
+              <h2 className='text-2xl font-semibold '>آخر العروض</h2>
+              <Link className='text-sm text-blue-400 hover:underline' to={'/listingsearch?offer=true'}>عرض المزيد</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {offerListings.map((listing) => (
@@ -109,10 +109,10 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>
+              <h2 className='text-2xl font-semibold '>
                 بعض عروض الإيجار
               </h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/listingsearch?type=rent'}>
+              <Link className='text-sm text-blue-400 hover:underline' to={'/listingsearch?type=rent'}>
               عرض المزيد</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -125,10 +125,10 @@ export default function Home() {
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>
-                بعض عروض الايجار
+              <h2 className='text-2xl font-semibold '>
+                بعض عروض البيع
               </h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/listingsearch?type=sale'}>عرض المزيد</Link>
+              <Link className='text-sm text-blue-400 hover:underline' to={'/listingsearch?type=sale'}>عرض المزيد</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {saleListings.map((listing) => (

@@ -73,7 +73,7 @@ export default function Listing() {
           </Swiper>
           <div className='fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
             <FaShare
-              className='text-slate-500'
+              className=''
               onClick={() => {
                 navigator.clipboard.writeText(window.location.href);
                 setCopied(true);
@@ -96,44 +96,44 @@ export default function Listing() {
                 : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / شهرياً'}
             </p>
-            <p className='flex items-center mt-6 gap-2 text-slate-600  text-sm'>
-              <FaMapMarkerAlt className='text-green-700' />
+            <p className='flex items-center mt-6 gap-2   text-sm'>
+              <FaMapMarkerAlt className='text-green-500' />
               {listing.address}
             </p>
             <div className='flex gap-4'>
-              <p className='bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
-                {listing.type === 'rent' ? 'For Rent' : 'For Sale'}
+              <p className='bg-red-800 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
+                {listing.type === 'rent' ? 'للإيجار' : 'للبيع'}
               </p>
               {listing.offer && (
-                <p className='bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
-                  ${+listing.regularPrice - +listing.discountPrice} OFF
+                <p className='bg-green-500 w-full max-w-[200px] text-white text-center p-1 rounded-md'>
+                  ${+listing.regularPrice - +listing.discountPrice} تخفيض
                 </p>
               )}
             </div>
-            <p className='text-slate-800'>
-              <span className='font-semibold text-black'>تفاصيل - </span>
+            <p className=''>
+              <span className='font-semibold '>التفاصيل - </span>
               {listing.description}
             </p>
-            <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
+            <ul className='text-green-500 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaBed className='text-lg' />
                 {listing.bedrooms > 1
-                  ? `${listing.bedrooms} beds `
-                  : `${listing.bedrooms} bed `}
+                  ? `${listing.bedrooms} غرفة نوم `
+                  : `${listing.bedrooms}  غرفة نوم  `}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaBath className='text-lg' />
                 {listing.bathrooms > 1
-                  ? `${listing.bathrooms} baths `
-                  : `${listing.bathrooms} bath `}
+                  ? `${listing.bathrooms} حمام `
+                  : `${listing.bathrooms} حمام `}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaParking className='text-lg' />
-                {listing.parking ? 'Parking spot' : 'No Parking'}
+                {listing.parking ? 'مواقف سيارات' : 'لا يوجد مواقف سيارات'}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaChair className='text-lg' />
-                {listing.furnished ? 'Furnished' : 'Unfurnished'}
+                {listing.furnished ? 'مفروشة' : 'غير مفروشة'}
               </li>
             </ul>
             {currentUser && listing.userRef !== currentUser._id && !contact && (
