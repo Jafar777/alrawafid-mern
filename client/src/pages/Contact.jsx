@@ -26,7 +26,7 @@ export default function Contact() {
         <FaXTwitter /> <a href="https://x.com/AlrawafidGroup">تابعنا وتواصل معنا على منصة إكس</a> 
         </span>
         <span  className='flex space gap-4 text-2xl border-solid text-purple-800'>
-        <FaInstagram /> <a href="https://www.instagram.com/alrawafidgroup/"></a> تابعنا وتواصل معنا على انستاغرام
+        <FaInstagram /> <a href="https://www.instagram.com/alrawafidgroup/"> تابعنا وتواصل معنا على انستاغرام</a>
         </span>
         </div>
         <br /><br />
