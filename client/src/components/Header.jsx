@@ -114,8 +114,8 @@ const handleSubmit = (e) =>{
           <Navbar.Link active={path === "/"} as={'div'}> 
             <Link to='/'>الصفحة الرئيسية</Link>
           </Navbar.Link>
-          <Navbar.Link active={path === "/about"} as={'div'}>
-            <Link to='/about'> نبذة عنا</Link>
+          <Navbar.Link active={path === "/listingsearch"} as={'div'}>
+            <Link to='/listingsearch'>  العروض العقارية</Link>
           </Navbar.Link>
           <Navbar.Link active={path === "/contact"} as={'div'}>
             <Link to='/contact' > تواصل</Link>

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    font-family: "Cairo";
+}
 body{
     height: 100vh;
 }
@@ -15,7 +18,7 @@ body{
 .post-content h1{
     font-size:1.5rem ;
     font-weight: 600;
-    font-family: sans-serif;
+    font-family: "Cairo", sans-serif;
     margin: 1.5rem 0;
 }
 

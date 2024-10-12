@@ -3,7 +3,7 @@ import React from 'react'
 import alrawafid from "../assets/alrawafid.png"
 import { Link } from 'react-router-dom'
 import { FaWhatsapp } from "react-icons/fa";
-import { FaSnapchat } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 
 export default function FooterCom() {
@@ -20,13 +20,10 @@ export default function FooterCom() {
                 <div >
                 <Footer.Title title='About' />
                 <Footer.LinkGroup col>
-                    <Footer.Link href='/projects'>
+                    <Footer.Link href='/listingsearch'>
                          العروض العقارية
                     </Footer.Link>
-                    <Footer.Link href='/orders'>
-                         الطلبات العقارية
-                    </Footer.Link>
-                    <Footer.Link href='#'>
+                    <Footer.Link href='https://maps.app.goo.gl/pMvoj2aYUM7UGpKu5'>
                           موقعنا الجغرافي
                     </Footer.Link>
                     
@@ -35,24 +32,12 @@ export default function FooterCom() {
                 <div >
                 <Footer.Title title='Media' />
                 <Footer.LinkGroup col >
-                    <Footer.Icon href='#' icon={FaInstagram}/>
-                   <Footer.Icon href='#' icon={FaSnapchat}/>
-                   <Footer.Icon href='#' icon={FaWhatsapp}/> 
+                    <Footer.Icon href='https://www.instagram.com/alrawafidgroup/' icon={FaInstagram}/>
+                   <Footer.Icon href='https://x.com/AlrawafidGroup' icon={FaXTwitter }/>
+                   <Footer.Icon href="https://wa.me/966532178999" icon={FaWhatsapp}/> 
                 </Footer.LinkGroup>
                 </div>
-                <div>
-                <Footer.Title title='Legal' />
-                <Footer.LinkGroup col>
-                    <Footer.Link href='#'>
-                         سياسة الخصوصية 
-                    </Footer.Link>
-                    <Footer.Link href='#'>
-                         الشروط والأحكام 
-                    </Footer.Link>
-                    
-                    
-                </Footer.LinkGroup>
-                </div>
+                
                 
             </div>
         </div>

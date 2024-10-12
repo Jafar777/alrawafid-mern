@@ -5,10 +5,17 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
-import { Button } from 'flowbite-react';
-import { HiOutlineArrowRight } from 'react-icons/hi';
+import { Button, Footer } from 'flowbite-react';
+import { FcHome } from "react-icons/fc";
 
-
+import project2 from "../assets/projects2.png"
+import project3 from "../assets/projects3.png"
+import project5 from "../assets/projects5.png"
+import project7 from "../assets/projects7.png"
+import nahdi from "../assets/Nahdi.svg"
+import mojtama from "../assets/mojtama.png"
+import naft from "../assets/naft.png"
+import alam from "../assets/alam.png"
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
@@ -62,82 +69,70 @@ export default function Home() {
           <br />
           لدينا مجموعة واسعة من العروض العقارية من أجلك , لتختار منها 
         </div>
-        <Link
-          
-          to={'/listingsearch'}
-          className='text-lg sm:text-base font-bold mt-8'
-        >
-          <Button gradientDuoTone="greenToBlue" pill size="lg">   ابدأ تصفح العروض العقارية <HiOutlineArrowRight className="ml-2 h-5 w-5" ></HiOutlineArrowRight></Button>
+        
+        <Link to={'/listingsearch'}className='text-lg sm:text-base font-bold mt-8'>
+          <Button gradientDuoTone="greenToBlue" pill size="lg">
+               تصفح العروض العقارية <FcHome className="ml-2 h-5 w-5" ></FcHome>
+               
+          </Button>
         
         </Link>
       </div>
+      <Footer.Divider/>
+      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto'>
+      <h1 className='font-bold text-3xl text-teal-600 mx-auto'>نبذة عننا</h1> <br /> <br />
+      <h1 className='font-bold text-2xl text-teal-600'>من نحن؟</h1>
+      <p><span className='text-yellow-500 font-bold text-xl'>روافد الفكر للمشاريع</span> حفرت بصمة في مجال المقاولات العامة وإدارة وتنفيذ المشاريع الهامة والكبرى, الأمر الذي يعكسه حجم المشاريع التي تم إنجازها خلال السنوات الماضية من خلال سياسات مدروسة على أسس علمية منذ انطلاقة الشركة الأولى عام 1429هـ</p>
+      <br />
+      <br />
+      <h1 className='font-bold text-2xl text-teal-600'>: رؤيتنا</h1>
+      <p>
+      معايير عملنا التي تعزز ريادتنا للخدمات المتكاملة في مجال المقاولات العامة  
+      </p> <br />
+      <h1 className='font-bold text-2xl text-teal-600'>: أهدافنا</h1>
+      <p> <span className='text-yellow-500 font-bold text-xl'>إنشاء بيئة عمل متكاملة </span>
+        نستثمر من خلالها أعلى الكفائات والخبرات البشرية وتعززها أحدث التقنيات الهندسية والعلمية المطبقة عالمياً لمواكبة احتياجات ومتطلبات السوق السعودي والعربي بشكل عام مع مسيرة التطوير والتنمية التي تشهدها المملكة العربية السعودية بكافة مناحي الحياة والمجتمع
+      </p>
 
-      {/* swiper */}
-      <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide>
-              <div
-                style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
-                }}
-                className='h-[500px]'
-                key={listing._id}
-              ></div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-
-      {/* listing results for offer, sale and rent */}
-
-      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
-        {offerListings && offerListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold '>آخر العروض</h2>
-              <Link className='text-sm text-blue-400 hover:underline' to={'/listingsearch?offer=true'}>عرض المزيد</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {offerListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
-        {rentListings && rentListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold '>
-                بعض عروض الإيجار
-              </h2>
-              <Link className='text-sm text-blue-400 hover:underline' to={'/listingsearch?type=rent'}>
-              عرض المزيد</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {rentListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
-        {saleListings && saleListings.length > 0 && (
-          <div className=''>
-            <div className='my-3'>
-              <h2 className='text-2xl font-semibold '>
-                بعض عروض البيع
-              </h2>
-              <Link className='text-sm text-blue-400 hover:underline' to={'/listingsearch?type=sale'}>عرض المزيد</Link>
-            </div>
-            <div className='flex flex-wrap gap-4'>
-              {saleListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
-          </div>
-        )}
+    <br /><br />
+      <h1 className='font-bold text-2xl text-teal-600'>: خدماتنا</h1>
+      <li className='text-yellow-500 font-bold text-xl'>
+          <ul>التكييف والتهوئة</ul> <br />
+          <ul> أنظمة الألمنيوم والاستركشر أعمال الكلايدينغ</ul> <br />
+          <ul> الديكورات والدهانات</ul> <br />
+          <ul>التسويق العقاري</ul>
+      </li>
       </div>
+      <Footer.Divider/>
+      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto'>
+        <h1 className='font-bold text-3xl text-teal-600 mx-auto'> إليكم بعض مشاريعنا</h1> <br /> <br />
+        <img src={project2} alt="projects" />
+        <img src={project3} alt="projects" />
+        <img src={project5} alt="projects" />
+        <img src={project7} alt="projects" />
+      </div>
+      <Footer.Divider/>
+      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
+      <h1 className='font-bold text-3xl text-teal-600 mx-auto'> بعض عملائنا</h1> <br /> <br />
+      <div className='flex gap-6 p-10 px-3 max-w-6xl mx-auto'>
+        
+      <img src={nahdi} alt="" className='w-60 h-36' /> 
+      <img src={mojtama} alt="" className='w-44 h-36 mr-10' />
+      <img src={naft} alt="" className='w-36 h-36' />
+      <img src={alam} alt="" className='w-36 h-36' />
+      
+      </div>
+      
+      </div>
+      
+      <Footer.Divider/>
+
+      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto'>
+      <h1 className='font-bold text-3xl text-teal-600 mx-auto'> موقعنا الجغرافي</h1> <br /> <br />
+      <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4574.046903513567!2d39.11944760000001!3d21.6066003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3dbb97b7a456b%3A0xd77a1efe79db1eaa!2z2YXZg9iq2Kgg2KfZhNmF2K3Yp9mF2Yog2YXYrdmF2K8g2KzYp9io2LEg2KfZhNi02YfYsdmK!5e1!3m2!1sen!2ssa!4v1728743517641!5m2!1sen!2ssa" className= "mx-auto w-3/4 h-96">
+      </iframe></p>
+      </div>
+      
     </div>
   );
 }
