@@ -1,23 +1,22 @@
-import { Avatar, Button, Dropdown, DropdownDivider, Navbar, TextInput } from 'flowbite-react'
+import { Avatar, Button, Dropdown, DropdownDivider, Navbar} from 'flowbite-react'
 import React, { useEffect } from 'react'
 import alrawafid from "../assets/alrawafid.png"
 import { Link,useLocation,useNavigate } from 'react-router-dom'
 import {AiOutlineSearch} from 'react-icons/ai';
-import { FaMoon,FaSun } from "react-icons/fa";
 import {useSelector,useDispatch} from 'react-redux';
-import {toggleTheme} from '../redux/theme/themeSlice';
 import { signOutSuccess } from '../redux/user/userSlice';
 import { useState } from 'react';
 
+
 export default function Header() {
+
+
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const {currentUser} = useSelector(state => state.user)
   const path = useLocation().pathname;
-  const {theme} = useSelector((state)=> state.theme);
-  
   const [searchTerm , setSearchTerm]= useState('');
 
 
@@ -46,36 +45,16 @@ export default function Header() {
         
     }
 };
-const handleSubmit = (e) =>{
-  e.preventDefault();
-  const urlParams = new URLSearchParams(location.search);
-  urlParams.set('searchTerm',searchTerm);
-  const searchQuery = urlParams.toString();
-  navigate(`/search?${searchQuery}`)
-}
+
   return (
     
 
-    <Navbar className='border-b-2'>
-      <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl'><img src={alrawafid} className='w-28 h-28'/></Link>
-      <form onSubmit={handleSubmit}>
-        <TextInput
-        type='text'
-        value={searchTerm}
-        onChange={(e)=> setSearchTerm(e.target.value)}
-        placeholder='بحث'
-        rightIcon={AiOutlineSearch}
-        className='hidden lg:inline'
-        />
-      </form>
-      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
-        <AiOutlineSearch  />
-      </Button>
+    <Navbar className='custom-bg-rawafid h-fit'>
+      <Link to="/" className='self-center whitespace-nowrap text-sm sm:text-xl'>
+      <img src={alrawafid} className='w-48'/>
+      </Link>
+
       <div className='flex gap-2 md:order-2'>
-        <Button className='w-12 h-10 hidden sm:inline' color='gray' pill onClick={() => dispatch(toggleTheme())}>
-          {theme === 'light'? <FaSun/>:<FaMoon/>}
-          
-        </Button>
 
         {currentUser ? (
           <Dropdown
@@ -93,34 +72,70 @@ const handleSubmit = (e) =>{
             <span className='block text-sm'>@{currentUser.username}</span>
             <span className='block text-sm font-medium truncate'>{currentUser.email}</span>
           </Dropdown.Header>
+
           <Link to={'/dashboard?tab=profile'}> 
             <Dropdown.Item>
               الحساب
             </Dropdown.Item>
             <DropdownDivider />
-            <Dropdown.Item onClick={handleSignOut}>تسجيل الخروج</Dropdown.Item>
+            <Dropdown.Item  onClick={handleSignOut}>تسجيل الخروج</Dropdown.Item>
           </Link>
 
           </Dropdown>
         ) :<Link to="/sign-in">
-        <Button gradientDuoTone="greenToBlue" outline>
+        <button className='text-yellow-500 hover:text-yellow-600'>
           تسجيل الدخول
-        </Button>
+        </button>
         </Link> }
         
-        <Navbar.Toggle/>
+        <Navbar.Toggle className='text-yellow-400 hover:bg-transparent hover:text-yellow-500'/>
       </div>
-      <Navbar.Collapse>
-          <Navbar.Link active={path === "/"} as={'div'}> 
-            <Link to='/'>الصفحة الرئيسية</Link>
+      <Navbar.Collapse >
+          <Navbar.Link className="custom-font-color1 hover:text-yellow-500  text-base font-bold active:text-blue-600 " active={path === "/"} as={'div'}> 
+            <Link className="custom-font-color1 hover:text-yellow-500  text-base font-bold active:text-blue-600" to='/'>الصفحة الرئيسية</Link>
           </Navbar.Link>
-          <Navbar.Link active={path === "/listingsearch"} as={'div'}>
-            <Link to='/listingsearch'>  العروض العقارية</Link>
+          <Navbar.Link className="custom-font-color1 hover:text-yellow-500  text-base font-bold active:text-blue-600 " active={path === "/projects"} as={'div'}> 
+            <Link className="custom-font-color1 hover:text-yellow-500  text-base font-bold active:text-blue-600" to='/projects'>مشاريعنا</Link>
           </Navbar.Link>
-          <Navbar.Link active={path === "/contact"} as={'div'}>
-            <Link to='/contact' > تواصل</Link>
+          <Navbar.Link className="custom-font-color1 hover:text-yellow-500  text-base font-bold active:text-blue-600 " active={path === "/services"} as={'div'}> 
+            <Link className="custom-font-color1 hover:text-yellow-500  text-base font-bold active:text-blue-600" to='/services'> خدماتنا </Link>
+          </Navbar.Link>
+
+          {/*from here */} 
+
+          
+          <div className="dropdown">
+              <button className="dropbtn">التسويق العقاري</button>
+              <div className="dropdown-content">
+              <Navbar.Link  className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 "  active={path === "/listingsearch "} as={'div'} >
+                    <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 " to='/listingsearch'>  العروض العقارية </Link>
+                  </Navbar.Link>
+
+                  <Navbar.Link  className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 "  active={path === "/orders "} as={'div'} >
+                    <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 " to='/orders'>  الطلبات العقارية </Link>
+                  </Navbar.Link>
+              </div>
+              
+          </div>
+
+
+
+
+
+          {/* till here */} 
+          
+              
+          
+          <Navbar.Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 " active={path === "/about"} as={'div'}>
+            <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600" to='/about' > عن الشركة</Link>
+          </Navbar.Link>
+          <Navbar.Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 " active={path === "/contact"} as={'div'}>
+            <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600" to='/contact' > إتصل بنا</Link>
           </Navbar.Link>
         </Navbar.Collapse>
     </Navbar>
+    
+
+    
   )
 }

@@ -4,6 +4,9 @@
 
 *{
     font-family: "Cairo";
+    box-sizing: border-box;
+    margin: 0;
+
 }
 body{
     height: 100vh;
@@ -37,3 +40,124 @@ body{
 .dark .post-content a {
     color: red;
   }
+.custom-font-color1{
+    
+    color:#cda367;
+    text-decoration: none;
+}
+.custom-font-color2{
+    color:#885e24;
+}
+.custom-font-color3{
+    color:#343537;
+}
+.custom-bg-color1{
+    
+    background:#cda367;
+}
+.custom-bg-color2{
+    background:#885e24;
+}
+.custom-bg-rawafid{
+    background: #343537;
+}
+.dropbtn {
+    background: transparent;
+    border: none;
+    font-size:1rem;
+    line-height: 1.5rem;
+    color: #cda367;
+    font-weight: bold;
+  }
+  
+  .drobdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  .dropdown-content {
+    display: none;
+    background: #ffffff;
+    min-width: 1px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+   
+
+  }
+  
+  .dropdown-content a {
+    display: block;
+    color: #cda367;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .dropdown-content a:hover {
+    background: #ddd;
+   
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  .acc-wrapper {
+    display: flex;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .acc-wrapper button {
+      padding: 10px 20px;
+      background: #343537;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+  }
+  
+  .accordian {
+    width: 500px;
+  }
+  
+  .item {
+    background: #343537;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+  }
+  
+  .title {
+    color: #cda367;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    direction: rtl;
+    font-size:1.5rem;
+    font-weight: bold;
+  }
+  
+  .acc-content {
+    color: #cda367;
+    height: auto;
+    direction: rtl;
+  }
+  #arabic{
+    direction: rtl;
+  }
+#rawafidborder{
+    border-color: #343537;
+}
+#rawafidborder:hover{
+    background: #343537;
+    text-decoration: underline;
+    cursor: pointer;
+}
