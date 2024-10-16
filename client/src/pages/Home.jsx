@@ -59,7 +59,7 @@ export default function Home() {
     <>
     <div className='relative flex flex-col'>
       <div className='relative flex flex-col z-30 max-w-xl mx-auto md:mb-96  overflow-hidden text-white'>
-      <img src={rawafidnobg} alt="pic" className='z-40 flex md:w-auto sm:w-72 sm:mb-0 mx-auto'/>
+      <img src={rawafidnobg} alt="pic" className='z-40 flex lg:w-auto md:w-auto w-40 sm:w-72 sm:mb-0 mx-auto'/>
                 <h1 className='text-center font-semibold md:text-4xl sm:text-base mb-5'>
          أوجد بيت احلامك 
          <span className='text-yellow-500 md:text-4xl sm:text-base'> المثالي</span>
@@ -71,11 +71,11 @@ export default function Home() {
           <br />
           لدينا مجموعة واسعة من العروض العقارية من أجلك , لتختار منها 
         </div>
-        <div className='flex gap-20'>
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh justify-center items-center  gap-5 mt-5 text-lg border-2  rounded-full w-60'>
+        <div className='flex md:flex-row lg:flex-row flex-col md:gap-20 lg:gap-20 gap-1 mx-auto'>
+        <div id="rawafidborder" className='flex custom-font-color1 h-100vh justify-center items-center  gap-5 mt-5 text-lg border-2  rounded-full w-60 '>
         <FaPhoneVolume /><a id='arabic' href='tel:+966532178999'>إضغط هنا للإتصال المباشر</a>
         </div>
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh justify-center items-center  gap-5 mt-5 text-lg border-2 rounded-xl w-60'>
+        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh justify-center items-center  gap-5 mt-5 text-lg border-2 rounded-xl w-60 '>
         <FaWhatsapp className='text-green-500 text-xl'/><a id='arabic' href='https://wa.me/966532178999' target="_blank">تواصل معنا على الواتساب</a>
       </div>
       </div>
@@ -154,10 +154,10 @@ export default function Home() {
       <div className='flex flex-col gap-6 p-28 px-3 max-w-xl mx-auto '>
         <h1 className='font-bold text-3xl custom-font-color1 mx-auto z-50'> بعض عملائنا</h1> 
           <div className='flex gap-6 p-10 px-3 max-w-xl mx-auto'>
-            <img src={nahdi} alt="" className='md:w-60 md:h-36 sm:w-20 sm:h-20' /> 
-            <img src={mojtama} alt="" className='md:w-44 md:h-36 md:mr-10 sm:w-20 sm:h-20' />
-            <img src={naft} alt="" className='md:w-36 md:h-36 sm:w-20 sm:h-20' />
-            <img src={alam} alt="" className='md:w-36 md:h-36 sm:w-20 sm:h-20' />
+            <img src={nahdi} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 w-20 h-20' /> 
+            <img src={mojtama} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 lg:mr-10 md:mr-10 w-20 h-20' />
+            <img src={naft} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-20 h-20' />
+            <img src={alam} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-20 h-20' />
           </div>
       </div>
     <Footer.Divider/>

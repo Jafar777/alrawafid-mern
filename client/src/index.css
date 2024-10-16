@@ -105,15 +105,6 @@ body{
   }
   
   
-  .acc-wrapper {
-    display: flex;
-    height: auto;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-  }
   
   .acc-wrapper button {
       padding: 10px 20px;
@@ -124,26 +115,10 @@ body{
       cursor: pointer;
   }
   
-  .accordian {
-    width: 500px;
-  }
+
   
-  .item {
-    background: #343537;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-  }
-  
-  .title {
-    color: #cda367;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    direction: rtl;
-    font-size:1.5rem;
-    font-weight: bold;
-  }
+ 
+
   
   .acc-content {
     color: #cda367;
