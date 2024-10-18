@@ -90,9 +90,26 @@ export default function Home() {
       </section>
 
       </div>
+
+
+
+
       {/* top ends here  */}
-     <div className='view'>
-      <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
+     <div className=' view flex gap-6 p-28 px-3 max-w-4xl text-right mx-auto '>
+      <div className='card mt-40 mb-40 mr-10'>
+        <div className='face front'>
+        <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
+          <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>من نحن ؟ </h1>
+          <p id='arabic' className='mt-6 mb-6 text-lg font-bold text-white text-right'>
+          </p>
+          <Link to={'/about'} className='flex'>
+          <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'><GoArrowRight className='bold text-3xl'/></button>
+          </Link>
+      </div>
+        </div>
+
+        <div className='face back'>
+        <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
           <Link to={'/about'}>
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>من نحن؟</h1>
           </Link>
@@ -103,10 +120,29 @@ export default function Home() {
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>الانقال لصفحة التعريف بالشركة<GoArrowRight className='bold text-3xl'/></button>
           </Link>
           
+      </div>
+        </div>
+      </div>
+
+
+        
+      <div class="card mt-40 mb-40 mr-10">
+				<div class="face front">
+        <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10'>
+          <Link to={'/services'}>
+          <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1'>ما هي خدماتنا  ؟</h1>
+          </Link>
+          <p id='arabic' className='mt-6 mb-6 text-lg font-bold custom-font-color3 text-right'>
+          </p>
+          <Link to={'/services'} className='flex'>
+          <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold  w-80 h-14'><GoArrowRight className='bold text-3xl'/></button>
+          </Link>
+          
       </div>  
 
-    
-      <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10'>
+				</div>
+				<div class="face back">
+        <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10'>
           <Link to={'/services'}>
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1'>ما هي خدمات شركة مجموعة الروافد التجارية ؟</h1>
           </Link>
@@ -119,9 +155,30 @@ export default function Home() {
           
       </div>  
 
+				</div>
+			</div>
     
-      
-      <div className=' blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
+     
+    
+
+      <div class="card mt-40 mb-40 mr-10">
+				<div class="face front">
+        <div className=' blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
+          <Link to={'/projects'}>
+          <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>
+            : مشاريع نفذتها مجموعة روافد
+          </h1>
+          </Link>
+          <p id='arabic' className='mt-6 mb-6 text-lg font-bold text-right text-white'> 
+          </p>
+          <Link to={'/projects'} className='flex'>
+          <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'><GoArrowRight className='bold text-3xl'/></button>
+          </Link>
+          
+      </div>
+				</div>
+				<div class="face back">
+        <div className=' blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
           <Link to={'/projects'}>
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>
             : مشاريع نفذتها مجموعة روافد
@@ -133,10 +190,28 @@ export default function Home() {
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>الانقال لصفحة المشاريع <GoArrowRight className='bold text-3xl'/></button>
           </Link>
           
-      </div>  
+      </div>
+				</div>
+			</div>
 
-     
-      <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 '>
+        
+      <div class="card mt-40 mb-40 mr-10">
+				<div class="face front">
+        <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 '>
+      <Link to={'/orders'}>
+        <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1'>
+           التسويق العقاري
+        </h1> 
+        </Link>
+        <p id='arabic' className='mt-6 mb-6 text-lg font-bold custom-font-color3 text-right'> </p>
+        <Link to={'/listingsearch'} className='flex'>
+          <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold w-80 h-14'><GoArrowRight className='bold text-3xl'/></button>
+          </Link>
+          <br />
+      </div>
+				</div>
+				<div class="face back">
+        <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 '>
       <Link to={'/orders'}>
         <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1'>
            التسويق العقاري
@@ -153,6 +228,10 @@ export default function Home() {
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>راسلنا هنا لطلب عقار معين <FaRegHandPointUp className='bold text-3xl'/></button>
           </Link>
       </div>
+				</div>
+			</div>
+     
+      
       </div>
 
 

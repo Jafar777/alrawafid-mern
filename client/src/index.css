@@ -227,3 +227,51 @@ animation try
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
   }
+
+
+/* here */
+
+.card
+{
+	position:relative;
+	width:300px;
+	height:400px;
+	transform-style:preserve-3d;
+}
+.card .face
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	transform-style:preserve-3d;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	backface-visibility:hidden;
+	transition: 2s ease-in-out;
+	transform: perspective(500px) rotatey(0deg);
+}
+.card .face.front
+{
+	
+}
+.card:hover .face.front
+{
+	transform: perspective(500px) rotatey(180deg);
+}
+.card .face.back
+{
+	transform: perspective(500px) rotatey(180deg);
+}
+.card:hover .face.back
+{
+	transform: perspective(500px) rotatey(360deg);
+}
+.card .face h2
+{
+	font-size:4em;
+	text-transform:uppercase;
+	transform: perspective(500px) translatez(50px);
+}
