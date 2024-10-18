@@ -95,8 +95,8 @@ export default function Home() {
 
 
       {/* top ends here  */}
-     <div className=' view flex gap-6 p-28 px-3 max-w-4xl text-right mx-auto '>
-      <div className='card mt-40 mb-40 mr-10'>
+     <div className=' flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto mt-10 justify-center items-center'>
+      <div className='card mt-40 mb-40'>
         <div className='face front'>
         <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>من نحن ؟ </h1>
@@ -126,7 +126,7 @@ export default function Home() {
 
 
         
-      <div class="card mt-40 mb-40 mr-10">
+      <div class="card mt-40 mb-40">
 				<div class="face front">
         <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10'>
           <Link to={'/services'}>
@@ -161,7 +161,7 @@ export default function Home() {
      
     
 
-      <div class="card mt-40 mb-40 mr-10">
+      <div class="card mt-40 mb-40">
 				<div class="face front">
         <div className=' blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
           <Link to={'/projects'}>
@@ -195,7 +195,7 @@ export default function Home() {
 			</div>
 
         
-      <div class="card mt-40 mb-40 mr-10">
+      <div class="card mt-40 mb-40">
 				<div class="face front">
         <div className='blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 '>
       <Link to={'/orders'}>
