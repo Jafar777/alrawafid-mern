@@ -156,9 +156,9 @@ export default function Home() {
       <Footer.Divider/>
 
 
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-xl mx-auto '>
+      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto '>
         <h1 className='font-bold text-3xl custom-font-color1 mx-auto z-50'> بعض عملائنا</h1> 
-          <div className='flex gap-6 p-10 px-3 max-w-xl mx-auto'>
+          <div className='flex gap-6 p-10 px-3 max-w-4xl mx-auto'>
             <img src={nahdi} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 w-16 h-16' /> 
             <img src={mojtama} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 lg:mr-10 md:mr-10 w-16 h-16' />
             <img src={naft} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-16 h-16' />
