@@ -59,7 +59,7 @@ export default function Home() {
     <>
     <div className='relative flex flex-col'> 
     <section class="box"> 
-        <video autoPlay loop muted plays-inline className=' absolute opacity-95 transition ease-in-out delay-250    hover:opacity-100'  >
+        <video autoPlay loop muted plays-inline  >
           <source src={rawafidvid} type="video/mp4" className='video-media'/>
         
         </video>
