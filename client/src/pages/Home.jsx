@@ -149,7 +149,7 @@ export default function Home() {
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>العروض العقارية المتوفرة <GoArrowRight className='bold text-3xl'/></button>
           </Link>
           <br />
-          <Link to={'/projects'} className='flex'>
+          <Link to={'/orders'} className='flex'>
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>راسلنا هنا لطلب عقار معين <FaRegHandPointUp className='bold text-3xl'/></button>
           </Link>
       </div>
