@@ -133,18 +133,6 @@ export default function Search() {
       <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
-            
-            <TextInput
-              type='text'
-              id='searchTerm'
-              placeholder='Search...'
-              
-              value={sidebardata.searchTerm}
-              onChange={handleChange}
-            />
-            <label className='whitespace-nowrap font-semibold'>
-              البحث
-            </label>
           </div>
           <div className='flex flex-col gap-4 '>
             <label className='font-semibold '>نوع العقار</label>
@@ -227,9 +215,6 @@ export default function Search() {
             </select>
             <label className='font-semibold'>ترتيب</label>
           </div>
-          <Button type='submit' outline gradientDuoTone='purpleToPink'>
-            بحث
-          </Button>
         </form>
       </div>
       <div className='w-full'>

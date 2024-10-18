@@ -11,25 +11,25 @@ export default function Contact() {
     <>
     <div className="flex flex-col items-center justify-center gap-4 mt-10 ">
         <h1 className='text-4xl font-extrabold custom-font-color1 mb-6'>نسعد بتواصلكم معنا</h1>
-        <div className=' custom-font-color2 font-bold text-xs sm:text-sm text-right mb-16'>
+        <div className=' custom-font-color2 font-bold text-sm lg:text-base md:text-base text-right mb-16'>
           لمناقشة احد العروض الموجودة أو لإضافة عروضكم الشخصية
            قومو بالتواصل معنا 
         </div>
         
         
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh w-1/2 justify-center items-center  gap-20 mt-5 text-4xl border-4 p-6 rounded-xl'>
+        <div id="rawafidborder" className='flex flex-row custom-font-color1 lg:h-100vh md:h-100vh lg:text-4xl md:text-4xl md:w-1/2 lg:w-1/2 justify-center items-center  gap-20 mt-5 text-base lg:border-4 md:border-4  md:p-6 lg:p-6 border-2 p-2 rounded-xl'>
         <MdOutlineEmail/><a id='arabic' href='mailto:alrawafid.g@hotmail.com'>إضغط هنا للتواصل على الايميل</a>
         </div>
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh w-1/2 justify-center items-center  gap-20 mt-5 text-4xl border-4 p-6 rounded-xl'>
+        <div id="rawafidborder" className='flex flex-row custom-font-color1 lg:h-100vh md:h-100vh lg:text-4xl md:text-4xl md:w-1/2 lg:w-1/2 justify-center items-center  gap-20 text-base lg:border-4 md:border-4  md:p-6 lg:p-6 border-2 p-2 rounded-xl'>
         <FaPhoneVolume /><a id='arabic' href='tel:+966532178999'>إضغط هنا للإتصال المباشر</a>
         </div>
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh w-1/2 justify-center items-center  gap-20 mt-5 text-4xl border-4 p-6 rounded-xl'>
+        <div id="rawafidborder" className='flex flex-row custom-font-color1 lg:h-100vh md:h-100vh lg:text-4xl md:text-4xl md:w-1/2 lg:w-1/2 justify-center items-center  text-base lg:border-4 md:border-4  md:p-6 lg:p-6 border-2 p-2 rounded-xl gap-20'>
         <FaWhatsapp className='text-green-500'/><a id='arabic' href='https://wa.me/966532178999' target="_blank">تواصل معنا على الواتساب</a>
       </div>
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh w-1/2 justify-center items-center  gap-28 mt-5 text-4xl border-4 p-6 rounded-xl'>
+        <div id="rawafidborder" className='flex flex-row custom-font-color1 lg:h-100vh md:h-100vh lg:text-4xl md:text-4xl md:w-1/2 lg:w-1/2 justify-center items-center  text-base lg:border-4 md:border-4  md:p-6 lg:p-6 border-2 p-2 rounded-xl gap-20'>
         <FaXTwitter className='text-gray-500 '/><a id='arabic' href='https://x.com/AlrawafidGroup' target="_blank">حسابنا على منصة إكس</a>
       </div>
-        <div id="rawafidborder" className='flex flex-row custom-font-color1 h-100vh w-1/2 justify-center items-center gap-36 mt-5 text-4xl border-4 p-6 rounded-xl'>
+        <div id="rawafidborder" className='flex flex-row custom-font-color1 lg:h-100vh md:h-100vh lg:text-4xl md:text-4xl md:w-1/2 lg:w-1/2 justify-center items-center  text-base lg:border-4 md:border-4  md:p-6 lg:p-6 border-2 p-2 rounded-xl gap-24'>
         <FaInstagram className='text-purple-500' /><a id='arabic' href='https://www.instagram.com/alrawafidgroup/' target="_blank">حسابنا على انستاغرام</a>
       </div>
         

@@ -57,8 +57,13 @@ export default function Home() {
   }, []);
   return (
     <>
-    <div className='relative flex flex-col'>
-      <div className='relative flex flex-col z-30 max-w-xl mx-auto md:mb-96  overflow-hidden text-white'>
+    <div className='relative flex flex-col'> 
+    <section class="box"> 
+        <video autoPlay loop muted plays-inline className=' absolute opacity-95 transition ease-in-out delay-250    hover:opacity-100'  >
+          <source src={rawafidvid} type="video/mp4" className='video-media'/>
+        
+        </video>
+        <div className='relative flex flex-col z-30 max-w-xl mx-auto md:mb-96  overflow-hidden text-white'>
       <img src={rawafidnobg} alt="pic" className='z-40 flex lg:w-auto md:w-auto w-40 sm:w-72 sm:mb-0 mx-auto'/>
                 <h1 className='text-center font-semibold md:text-4xl sm:text-base mb-5'>
          أوجد بيت احلامك 
@@ -80,10 +85,10 @@ export default function Home() {
       </div>
       </div>
       </div>
-      <video autoPlay loop muted plays-inline className='absolute opacity-95 transition ease-in-out delay-250 hover:opacity-100 ' >
-        <source src={rawafidvid} type="video/mp4"/>
-        
-      </video>
+      
+      
+      </section>
+
       </div>
       {/* top ends here  */}
       <Footer.Divider/>
@@ -154,10 +159,10 @@ export default function Home() {
       <div className='flex flex-col gap-6 p-28 px-3 max-w-xl mx-auto '>
         <h1 className='font-bold text-3xl custom-font-color1 mx-auto z-50'> بعض عملائنا</h1> 
           <div className='flex gap-6 p-10 px-3 max-w-xl mx-auto'>
-            <img src={nahdi} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 w-20 h-20' /> 
-            <img src={mojtama} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 lg:mr-10 md:mr-10 w-20 h-20' />
-            <img src={naft} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-20 h-20' />
-            <img src={alam} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-20 h-20' />
+            <img src={nahdi} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 w-16 h-16' /> 
+            <img src={mojtama} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 lg:mr-10 md:mr-10 w-16 h-16' />
+            <img src={naft} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-16 h-16' />
+            <img src={alam} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-16 h-16' />
           </div>
       </div>
     <Footer.Divider/>
