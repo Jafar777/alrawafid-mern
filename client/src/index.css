@@ -196,10 +196,7 @@ section {
 animation try
 */
 
-.view {
 
-    
-  }
   .blockers {
     
     border-radius: 50px;
@@ -273,3 +270,21 @@ animation try
 	text-transform:uppercase;
 	transform: perspective(500px) translatez(50px);
 }
+.each-slide-effect > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 600px;
+  
+  }
+  
+  .each-slide-effect span {
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+    background: transparent;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+  }
