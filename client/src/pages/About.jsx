@@ -4,13 +4,13 @@ import 'react-slideshow-image/dist/styles.css';
 
 export default function About() {
   const images = [
-     '/src/assets/airconditioner1.jpg',
-    '/src/assets/construction.jpg',
-    '/src/assets/projectmanagement.jpg',
-    '/src/assets/aluminumandstructure.jpg',
-    '/src/assets/decorationAndPainting.jpg',
-    '/src/assets/Facilitiesmaintenance.jpg',
-    '/src/assets/realestate.jpg'
+    'client/src/assets/airconditioner1.jpg',
+    'client/src/assets/construction.jpg',
+    'client/src/assets/projectmanagement.jpg',
+    'client/src/assets/aluminumandstructure.jpg',
+    'client/src/assets/decorationAndPainting.jpg',
+    'client/src/assets/Facilitiesmaintenance.jpg',
+    'client/src/assets/realestate.jpg'
 ];
   return (
     
