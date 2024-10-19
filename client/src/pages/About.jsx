@@ -58,7 +58,7 @@ export default function About() {
 
 
         <div id='arabic' className='flex flex-col mt-16 mb-16 '>
-          <h1 className='mx-auto text-3xl custom-font-color3'>نبذة عن الشركة</h1>
+          <h1 className='mx-auto text-3xl custom-font-color3'>نبذة عن مجموعة الروافد</h1>
 
           <div>
             <h2 className='custom-font-color1 text-2xl mr-1'>من نحن؟</h2>
@@ -69,7 +69,7 @@ export default function About() {
           </div>
           <div>
             <h2 className='custom-font-color1 text-2xl mr-1'>رؤيتنا :</h2>
-            <p className='mt-3 mb-3 mr-3 ml-3 text-xl custom-font-color3'>نسعى لأن نكون في طليعة الشركات الرائدة في تقديم الحلول المتكاملة في مجال المقاولات العامة، مع التركيز على الابتكار وتطبيق أعلى معايير الجودة. رؤيتنا تتمثل في تعزيز التنمية المستدامة من خلال تنفيذ مشاريع تحقق التوازن بين التطور المعماري والاحتياجات المجتمعية، ملتزمين بالتميز في كل جانب من جوانب عملنا.</p>
+            <p className='mt-3 mb-3 mr-3 ml-3 text-xl custom-font-color3'>نسعى لأن نكون في طليعة المجموعات الرائدة في تقديم الحلول المتكاملة في مجال المقاولات العامة، مع التركيز على الابتكار وتطبيق أعلى معايير الجودة. رؤيتنا تتمثل في تعزيز التنمية المستدامة من خلال تنفيذ مشاريع تحقق التوازن بين التطور المعماري والاحتياجات المجتمعية، ملتزمين بالتميز في كل جانب من جوانب عملنا.</p>
           </div>
           <div>
             <h2 className='custom-font-color1 text-2xl mr-1'>أهدافنا :</h2>

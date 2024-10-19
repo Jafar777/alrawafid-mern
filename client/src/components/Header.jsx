@@ -127,7 +127,7 @@ export default function Header() {
               
           
           <Navbar.Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 " active={path === "/about"} as={'div'}>
-            <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600" to='/about' > عن الشركة</Link>
+            <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600" to='/about' > نبذة عننا</Link>
           </Navbar.Link>
           <Navbar.Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600 " active={path === "/contact"} as={'div'}>
             <Link className="custom-font-color1 hover:text-yellow-500 text-base font-bold active:text-blue-600" to='/contact' > إتصل بنا</Link>
