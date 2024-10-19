@@ -4,13 +4,14 @@ import 'react-slideshow-image/dist/styles.css';
 
 export default function About() {
   const images = [
-    'client/src/assets/airconditioner1.jpg',
-    'client/src/assets/construction.jpg',
-    'client/src/assets/projectmanagement.jpg',
-    'client/src/assets/aluminumandstructure.jpg',
-    'client/src/assets/decorationAndPainting.jpg',
-    'client/src/assets/Facilitiesmaintenance.jpg',
-    'client/src/assets/realestate.jpg'
+    
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/airconditioner1.jpg?raw=true',
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/construction.jpg?raw=true',
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/projectmanagement.jpg?raw=true',
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/aluminumandstructure.jpg?raw=true',
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/decorationAndPainting.jpg?raw=true',
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/Facilitiesmaintenance.jpg?raw=true',
+    'https://github.com/Jafar777/alrawafid-mern/blob/main/client/src/assets/realestate.jpg?raw=true'
 ];
   return (
     
