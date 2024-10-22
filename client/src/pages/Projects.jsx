@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaTurnDown } from "react-icons/fa6";
-import project1 from "../assets/projects1.png"
-import project2 from "../assets/projects2.png"
+import project2 from "../assets/projects1.png"
+import project1 from "../assets/projects2.png"
 import project3 from "../assets/projects3.png"
 import project4 from "../assets/projects4.png"
 import project5 from "../assets/projects5.png"
