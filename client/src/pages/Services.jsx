@@ -31,7 +31,7 @@ export default function Services() {
            <div className='flex justify-center items-center custom-font-color1 gap-20 mt-20 md:text-4xl lg:text-4xl font-bold'>
             <h1 className='cursor-default text-xl'> خدمات مجموعة الروافد التجارية</h1>
            </div>
-           <p id='arabic' className='mt-6 mb-6 mr-1 ml-1 lg:text-lg md:text-lg text-sm font-bold custom-font-color3 max-w-lg'>تقدم مجموعة الروافد العقارية مجموعة شاملة من الخدمات المتكاملة التي تلبي احتياجات السوق العقاري في المملكة العربية السعودية. تتميز خدماتنا بالاحترافية والجودة العالية، مما يجعلنا الخيار الأمثل لعملائنا. تشمل خدماتنا : </p>
+           <p id='arabic' className='mt-6 mb-6 mr-1 ml-1 lg:text-lg md:text-lg text-sm font-bold custom-font-color3 max-w-lg'>تقدم مجموعة الروافد التجارية مجموعة شاملة من الخدمات المتكاملة التي تلبي احتياجات السوق العقاري في المملكة العربية السعودية. تتميز خدماتنا بالاحترافية والجودة العالية، مما يجعلنا الخيار الأمثل لعملائنا. تشمل خدماتنا : </p>
            {/* accordian starts here*/}
             
           <div className="acc-wrapper flex flex-col h-auto w-screen justify-center items-center mt-10 mb-10 gap-5">

@@ -69,7 +69,7 @@ export default function Home() {
          أوجد بيت احلامك 
          <span className='text-yellow-500 md:text-4xl sm:text-base'> المثالي</span>
           <br />
-          بسهولة مع مجموعة الروافد العقارية
+          بسهولة مع مجموعة الروافد التجارية
         </h1>
         <div className='text-base  text-right text-white md:text-base sm:text-sm'>
           تصفح اخر العروض العقارية المثالية عبر منصتنا الالكترونية 
@@ -114,7 +114,7 @@ export default function Home() {
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>من نحن؟</h1>
           </Link>
           <p id='arabic' className='mt-6 mb-6 text-lg font-bold text-white text-right'>
-          تأسست مجموعة الروافد العقارية عام 2008 (1429هـ) لتصبح أحد الرواد في مجال المقاولات العامة وإدارة وتنفيذ المشاريع الكبرى في المملكة العربية السعودية. منذ انطلاقتنا، تركنا بصمة مميزة عبر تنفيذ مشاريع ضخمة ومتنوعة، مما يعكس التزامنا الدائم بتطبيق سياسات مدروسة تقوم على أسس علمية دقيقة. بفضل خبراتنا الممتدة لأكثر من عقد، نجحنا في تحقيق توازن مثالي بين الجودة والكفاءة، مما يعزز مكانتنا كشريك موثوق في قطاع البناء والمقاولات.
+          تأسست مجموعة الروافد التجارية لتصبح أحد الرواد في مجال التسويق العقاري والعلاقات العامة و المقاولات والديكورات وإدارة وتخطيط وتنفيذ المشاريع الكبرى في المملكة العربية السعودية. منذ انطلاقتنا، تركنا بصمة مميزة عبر تنفيذ مشاريع ضخمة ومتنوعة، مما يعكس التزامنا الدائم بتطبيق سياسات مدروسة تقوم على أسس علمية دقيقة. بفضل خبراتنا الممتدة لأكثر  من عقد، نجحنا في تحقيق توازن مثالي بين الجودة والكفاءة، مما يعزز مكانتنا كشريك موثوق في قطاع البناء والتسويق العقاري والمقاولات.
           </p>
           <Link to={'/about'} className='flex'>
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>الانقال لصفحة التعريف بنا<GoArrowRight className='bold text-3xl'/></button>
@@ -147,7 +147,7 @@ export default function Home() {
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1'>ما هي خدمات مجموعة الروافد التجارية ؟</h1>
           </Link>
           <p id='arabic' className='mt-6 mb-6 text-lg font-bold custom-font-color3 text-right'>
-          تقدم مجموعة الروافد العقارية باقة متكاملة من الخدمات التي تغطي كافة جوانب قطاع المقاولات وإدارة المشاريع. تشمل خدماتنا المقاولات العامة، إدارة المشاريع، أنظمة التكييف والتبريد والتهوية، أنظمة الألمنيوم والاستركشر والكلايدينغ، بالإضافة إلى الديكورات والدهانات. كما نقدم استشارات هندسية متخصصة وخدمات صيانة دورية لضمان استدامة المشاريع وجودتها. نلتزم بتقديم حلول مبتكرة تتماشى مع أعلى معايير الجودة العالمية، مما يجعلنا الخيار الأمثل لتنفيذ المشاريع العقارية بكفاءة واحترافية.
+          تقدم مجموعة الروافد التجارية باقة متكاملة من الخدمات التي تغطي كافة جوانب قطاع البناء و المقاولات العامة والتسويق العقاري وإدارة المشاريع. تشمل خدماتنا التسويق العقاري و العلاقات العامة والمقاولات العامة، وإدارة المشاريع، أنظمة التكييف والتبريد والتهوية، أنظمة الألمنيوم والاستركشر والكلايدينغ، بالإضافة إلى الديكورات والدهانات. كما نقدم استشارات هندسية متخصصة وخدمات صيانة دورية لضمان استدامة المشاريع وجودتها. نلتزم بتقديم حلول مبتكرة تتماشى مع أعلى معايير الجودة العالمية، مما يجعلنا الخيار الأمثل لتنفيذ المشاريع العقارية بكفاءة واحترافية.
           </p>
           <Link to={'/services'} className='flex'>
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>الانقال لصفحة خدماتنا<GoArrowRight className='bold text-3xl'/></button>
@@ -166,7 +166,7 @@ export default function Home() {
         <div className=' blockers flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto mt-10 custom-bg-color3'>
           <Link to={'/projects'}>
           <h1 className='md:text-4xl sm:text-base hover:underline font-bold custom-font-color1 mr-3'>
-            : مشاريع نفذتها مجموعة روافد
+             مشاريع نفذتها مجموعة روافد
           </h1>
           </Link>
           <p id='arabic' className='mt-6 mb-6 text-lg font-bold text-right text-white'> 
@@ -184,7 +184,7 @@ export default function Home() {
             : مشاريع نفذتها مجموعة روافد
           </h1>
           </Link>
-          <p id='arabic' className='mt-6 mb-6 text-lg font-bold text-right text-white'>نفذت مجموعة الروافد العقارية مجموعة متنوعة من المشاريع الكبرى التي تغطي مجالات متعددة في قطاع العقارات والبناء. تشمل مشاريعنا السكنية والتجارية، باستخدام أحدث التقنيات والابتكارات لضمان الجودة والاستدامة. تميزنا بإدارة وتنفيذ مشاريع ضخمة بدقة واحترافية، مما يعزز من مكانتنا كمجموعة رائدة في السوق السعودي. نعمل على تحقيق أعلى مستويات الرضا لعملائنا من خلال تقديم حلول مبتكرة تلبي احتياجاتهم وتساهم في تطوير البنية التحتية بما يتماشى مع رؤية المملكة 2030..
+          <p id='arabic' className='mt-6 mb-6 text-lg font-bold text-right text-white'>نفذت مجموعة الروافد التجارية مجموعة متنوعة من المشاريع الكبرى التي تغطي مجالات متعددة في قطاع العقارات والبناء والتسويق العقاري . تشمل مشاريعنا السكنية والتجارية، باستخدام أحدث التقنيات والابتكارات لضمان الجودة والاستدامة. تميزنا بإدارة وتنفيذ مشاريع ضخمة بدقة واحترافية، مما يعزز من مكانتنا كمجموعة رائدة في السوق السعودي. نعمل على تحقيق أعلى مستويات الرضا لعملائنا من خلال تقديم حلول مبتكرة تلبي احتياجاتهم وتساهم في تطوير البنية التحتية بما يتماشى مع رؤية المملكة 2030..
           </p>
           <Link to={'/projects'} className='flex'>
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>الانقال لصفحة المشاريع <GoArrowRight className='bold text-3xl'/></button>
@@ -218,7 +218,7 @@ export default function Home() {
         </h1> 
         </Link>
         <p id='arabic' className='mt-6 mb-6 text-lg font-bold custom-font-color3 text-right'>
-        تقدم مجموعة الروافد العقارية حلولًا متكاملة للتسويق العقاري من خلال عروض متنوعة تناسب مختلف الاحتياجات. نساعد عملاءنا على استكشاف أفضل الفرص الاستثمارية في السوق من خلال قاعدة بيانات غنية بالعقارات المتاحة. كما نتيح لعملائنا إمكانية إرسال طلباتهم المخصصة، حيث يقوم فريقنا المتخصص بالبحث وتقديم العروض التي تتناسب تمامًا مع متطلباتهم. هدفنا هو تسهيل عملية الشراء أو الاستثمار العقاري من خلال توفير حلول تسويقية مبتكرة تلبي احتياجات الزبائن وتضمن أعلى مستويات الرضا.
+        تقدم مجموعة الروافد التجارية حلولًا متكاملة للتسويق العقاري من خلال عروض متنوعة تناسب مختلف الاحتياجات. نساعد عملاءنا على استكشاف أفضل الفرص الاستثمارية في السوق من خلال قاعدة بيانات غنية بالعقارات المتاحة. كما نتيح لعملائنا إمكانية إرسال طلباتهم المخصصة، حيث يقوم فريقنا المتخصص بالبحث وتقديم العروض التي تتناسب تمامًا مع متطلباتهم. هدفنا هو تسهيل عملية الشراء أو الاستثمار العقاري من خلال توفير حلول تسويقية مبتكرة تلبي احتياجات الزبائن وتضمن أعلى مستويات الرضا.
         </p>
         <Link to={'/listingsearch'} className='flex'>
           <button id='rawafidborder' className='flex flex-row items-center justify-center gap-5 custom-font-color1 rounded-full font-bold border-2 w-80 h-14'>العروض العقارية المتوفرة <GoArrowRight className='bold text-3xl'/></button>
@@ -236,10 +236,10 @@ export default function Home() {
 
 
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto mt-10 '>
-        <h1 className='font-bold text-3xl custom-font-color1 mx-auto z-50'> بعض عملائنا</h1> 
-          <div className='flex gap-6 p-10 px-3 max-w-4xl mx-auto'>
-            <img src={nahdi} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 w-16 h-16' /> 
-            <img src={mojtama} alt="" className='lg:w-60 lg:h-36 md:w-60 md:h-36 lg:mr-10 md:mr-10 w-16 h-16' />
+        <h1 className='font-bold text-3xl custom-font-color1 mx-auto z-50'> أبرز عملائنا</h1> 
+          <div className='flex items-center justify-center gap-6 p-10 px-3 max-w-4xl mx-auto'>
+            <img src={nahdi} alt="" className='lg:w-60 lg:h-60 md:w-60 md:h-36 w-16 h-16' /> 
+            <img src={mojtama} alt="" className='lg:w-52 lg:h-36 md:w-60 md:h-36 lg:mr-10 md:mr-10 w-16 h-16' />
             <img src={naft} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-16 h-16' />
             <img src={alam} alt="" className='lg:w-60 lg:h-36 md:w-36 md:h-36 w-16 h-16' />
           </div>
@@ -248,7 +248,7 @@ export default function Home() {
     <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl text-right mx-auto'>
       <h1 className='font-bold text-3xl custom-font-color1 mx-auto mb-5'> زيارة الفرع الرئيسي</h1> 
       <p className='text-center custom-font-color3 text-lg font-bold flex justify-center items-center gap-5'><CiLocationOn className='text-red-600 text-3xl' />جدة - طريق الملك عبدالعزيز الفرعي - جانب بنك ساب الاول - مبنى 23514</p> 
-      <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4574.046903513567!2d39.11944760000001!3d21.6066003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3dbb97b7a456b%3A0xd77a1efe79db1eaa!2z2YXZg9iq2Kgg2KfZhNmF2K3Yp9mF2Yog2YXYrdmF2K8g2KzYp9io2LEg2KfZhNi02YfYsdmK!5e1!3m2!1sen!2ssa!4v1728743517641!5m2!1sen!2ssa" className= "mx-auto w-3/4 h-96">
+      <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4574.047807800211!2d39.11939889999999!3d21.606571700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3db78fbd53fbf%3A0x95aef733808617f8!2z2KfZhNix2YjYp9mB2K8g2YTZhNiu2K_Zhdin2Kog2KfZhNi52YLYp9ix2YrYqQ!5e1!3m2!1sen!2ssa!4v1729597774639!5m2!1sen!2ssa" className= "mx-auto w-3/4 h-96">
       </iframe></p>
       </div>
     </>

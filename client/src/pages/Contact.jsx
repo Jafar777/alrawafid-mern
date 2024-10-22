@@ -37,7 +37,7 @@ export default function Contact() {
         </div>
         
         <h1 className='text-4xl font-extrabold text-center text-yellow-500 mt-20'>موقعنا الجغرافي</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4574.046903513567!2d39.11944760000001!3d21.6066003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3dbb97b7a456b%3A0xd77a1efe79db1eaa!2z2YXZg9iq2Kgg2KfZhNmF2K3Yp9mF2Yog2YXYrdmF2K8g2KzYp9io2LEg2KfZhNi02YfYsdmK!5e1!3m2!1sen!2ssa!4v1728743517641!5m2!1sen!2ssa" className="mx-auto w-9/12 h-96 mt-11 mb-24">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4574.047807800211!2d39.11939889999999!3d21.606571700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3db78fbd53fbf%3A0x95aef733808617f8!2z2KfZhNix2YjYp9mB2K8g2YTZhNiu2K_Zhdin2Kog2KfZhNi52YLYp9ix2YrYqQ!5e1!3m2!1sen!2ssa!4v1729597774639!5m2!1sen!2ssa" className="mx-auto w-9/12 h-96 mt-11 mb-24">
           </iframe>
     
     
