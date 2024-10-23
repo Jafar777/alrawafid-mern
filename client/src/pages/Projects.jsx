@@ -1,12 +1,12 @@
 import React from 'react'
 import { FaTurnDown } from "react-icons/fa6";
-import project2 from "../assets/projects1.png"
-import project1 from "../assets/projects2.png"
+import project7 from "../assets/projects1.png"
+import project2 from "../assets/projects2.png"
 import project3 from "../assets/projects3.png"
 import project4 from "../assets/projects4.png"
 import project5 from "../assets/projects5.png"
 import project6 from "../assets/projects6.png"
-import project7 from "../assets/projects7.png"
+import project1 from "../assets/projects7.png"
 export default function Projects() {
   return (
     <div className='flex flex-col justify-center items-center'>
