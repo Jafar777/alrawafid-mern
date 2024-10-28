@@ -1,10 +1,36 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
-import { Button, TextInput } from 'flowbite-react';
+import { Button, Checkbox, Label,  TextInput } from 'flowbite-react';
+import Select from 'react-select'
+
+
+
 
 export default function Search() {
   const navigate = useNavigate();
+  const propertyOptions = [
+    { value: 'all', label: 'الكل' },
+    { value: 'land', label: 'أرض' },
+    { value: 'apartment', label: 'شقة' },
+    { value: 'villa', label: 'فلة' },
+    { value: 'building', label: 'عمارة' },
+    { value: 'shop', label: 'محل تجاري' },
+    { value: 'office', label: 'مكتب ' },
+  ]
+
+  const cityOptions = [
+    { value: 'all', label: 'الكل' },
+    {value: "Makkah", label:"منطقة مكة المكرمة"},
+    {value: "Medina", label:"المدينة المنورة"},
+    {value: "Riyadh", label:"الرياض"},
+    {value: "Al-Qassim", label:"القصيم"},
+    {value: "Dammam", label:"الدمام"},
+    {value: "Najran", label:"نجران"},
+    {value: "Tabuk", label:"تبوك"},
+  ]
+
+
   const [sidebardata, setSidebardata] = useState({
     searchTerm: '',
     type: 'all',
@@ -14,6 +40,11 @@ export default function Search() {
     sort: 'created_at',
     order: 'desc',
   });
+  const [query,setQuery] = useState("");
+
+
+
+
 
   const [loading, setLoading] = useState(false);
   const [listings, setListings] = useState([]);
@@ -101,19 +132,7 @@ export default function Search() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const urlParams = new URLSearchParams();
-    urlParams.set('searchTerm', sidebardata.searchTerm);
-    urlParams.set('type', sidebardata.type);
-    urlParams.set('parking', sidebardata.parking);
-    urlParams.set('furnished', sidebardata.furnished);
-    urlParams.set('offer', sidebardata.offer);
-    urlParams.set('sort', sidebardata.sort);
-    urlParams.set('order', sidebardata.order);
-    const searchQuery = urlParams.toString();
-    navigate(`/search-listings?${searchQuery}`);
-  };
+
 
   const onShowMoreClick = async () => {
     const numberOfListings = listings.length;
@@ -128,14 +147,39 @@ export default function Search() {
     }
     setListings([...listings, ...data]);
   };
+ 
+
   return (
     <div className='flex flex-col md:flex-row'>
-      <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen'>
+      <div className='flex flex-col p-7  border-b-2 md:border-r-2 md:min-h-screen '>
+        <label htmlFor="search" className='custom-font-color2 mb-2' id='arabic'>ابحث عن اسم عقارك هنا : </label>
+        <input type="text" id='arabic' placeholder='بحث...' onChange={e=> setQuery(e.target.value)} className="search mb-2" />
+        <h3 id='arabic' className='mt-4 mb-2 custom-font-color2'> أو استعمل فلاتر متقدمة للبحث :</h3>
+        <div className='flex justify-around items-center gap-2 '>
+          <div id='arabic' className='flex items-center gap-2'>
+          <input type='radio' defaultChecked name='type'></input>
+          <label >الكل</label>
+          <input type='radio'  name='type'></input>
+          <label >بيع</label>
+          <input type='radio' name='type'></input>
+          <label >إيجار</label>
+          </div>
+         
+        </div>
+        <h3 id='arabic' className='mt-4 mb-2 custom-font-color2'> حدد العقار : </h3>
+        <div>
+          <Select options={propertyOptions} placeholder="اختر" id='arabic'/>
+        </div>
+        <h3 id='arabic' className='mt-4 mb-2 custom-font-color2'>اختر المنطقة :</h3>
+        <div>
+          <Select options={cityOptions} placeholder="المنطقة" id="arabic"/>
+        </div>
+        
         
       </div>
       <div className='w-full'>
         <h1 className='text-center text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5 '>
-          نتائج العروض العقارية
+          العروض العقارية
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
           {!loading && listings.length === 0 && (
@@ -149,16 +193,16 @@ export default function Search() {
 
           {!loading &&
             listings &&
-            listings.map((listing) => (
+            listings.filter(listing=>listing.name.includes(query)).map((listing) => (
               <ListingItem key={listing._id} listing={listing} />
             ))}
 
           {showMore && (
             <button
               onClick={onShowMoreClick}
-              className='text-green-700 hover:underline p-7 text-center w-full'
+              className='custom-font-color1 hover:underline p-7 text-center w-full'
             >
-              Show more
+              إظهار المزيد
             </button>
           )}
         </div>

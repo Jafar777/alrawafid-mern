@@ -23,10 +23,12 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
-    type: 'rent',
-    bedrooms: 1,
-    bathrooms: 1,
-    regularPrice: 50,
+    city:'',
+    type: '',
+    type2: '',
+    bedrooms: 0,
+    bathrooms: 0,
+    regularPrice: 'عند التواصل',
     discountPrice: 0,
     offer: false,
     parking: false,
@@ -57,11 +59,11 @@ export default function CreateListing() {
           setUploading(false);
         })
         .catch((err) => {
-          setImageUploadError('Image upload failed (2 mb max per image)');
+          setImageUploadError('فشل تحميل الصورة (الحد الأقصى 2 ميغا للصورة)');
           setUploading(false);
         });
     } else {
-      setImageUploadError('You can only upload 6 images per listing');
+      setImageUploadError('يمكنك تحميل 6 صور كحد اقصى لكل عرض');
       setUploading(false);
     }
   };
@@ -77,7 +79,7 @@ export default function CreateListing() {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log(`Upload is ${progress}% done`);
+          console.log(`التحميل ${progress}% تم`);
         },
         (error) => {
           reject(error);
@@ -133,9 +135,9 @@ export default function CreateListing() {
     e.preventDefault();
     try {
       if (formData.imageUrls.length < 1)
-        return setError('You must upload at least one image');
+        return setError('يجب تحميل صورة واحدة على الأقل');
       if (+formData.regularPrice < +formData.discountPrice)
-        return setError('Discount price must be lower than regular price');
+        return setError('السعر المخفض يجب ان يكون أقل من السعر العادي');
       setLoading(true);
       setError(false);
       const res = await fetch('/api/listing/create', {
@@ -168,16 +170,16 @@ export default function CreateListing() {
   return (
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>
-        إنشاء العرض
-      </h1>
+            إنشاء عرض جديد
+            </h1>
       <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
-        <div className='flex flex-col gap-4 flex-1'>
+        <div className='flex flex-col gap-4 flex-1' id='arabic'>
           <TextInput
             type='text'
             placeholder='اسم العقار'
             id='name'
             maxLength='62'
-            minLength='10'
+            minLength='8'
             required
             onChange={handleChange}
             value={formData.name}
@@ -185,11 +187,26 @@ export default function CreateListing() {
           <Textarea
             type='text'
             placeholder='وصف العقار'
-            
             id='description'
             required
             onChange={handleChange}
             value={formData.description}
+          />
+          <TextInput
+            type='text'
+            placeholder='نوع العقار'
+            id='type2'
+            required
+            onChange={handleChange}
+            value={formData.type2}
+          />
+          <TextInput
+            type='text'
+            placeholder='المدينة'
+            id='city'
+            required
+            onChange={handleChange}
+            value={formData.city}
           />
           <TextInput
             type='text'
@@ -256,7 +273,7 @@ export default function CreateListing() {
               <input
                 type='number'
                 id='bedrooms'
-                min='1'
+                min='0'
                 max='10'
                 required
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
@@ -274,7 +291,7 @@ export default function CreateListing() {
               <input
                 type='number'
                 id='bathrooms'
-                min='1'
+                min='0'
                 max='10'
                 required
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
@@ -292,10 +309,8 @@ export default function CreateListing() {
 
             <div className='flex items-center gap-2'>
               <input
-                type='number'
+                type='string'
                 id='regularPrice'
-                min='50'
-                max='10000000'
                 required
                 className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 onChange={handleChange}
@@ -313,8 +328,6 @@ export default function CreateListing() {
                 <input
                   type='number'
                   id='discountPrice'
-                  min='0'
-                  max='10000000'
                   required
                   className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                   onChange={handleChange}
@@ -332,11 +345,11 @@ export default function CreateListing() {
             )}
           </div>
         </div>
-        <div className='flex flex-col flex-1 gap-4'>
+        <div className='flex flex-col flex-1 gap-4' id='arabic'>
           <p className='font-semibold'>
-            Images :
+             الصور :
             <span className='font-normal text-gray-600 ml-2'>
-              The first image will be the cover (max 6)
+               ستكون هذه خلفية العقار (الحد الأقصى 6)
             </span>
           </p>
           <div className='flex gap-4'>

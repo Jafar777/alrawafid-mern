@@ -14,12 +14,16 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    city: {
+      type: String,
+      required: true,
+    },
     regularPrice: {
-      type: Number,
+      type: String,
       required: true,
     },
     discountPrice: {
-      type: Number,
+      type: String,
       required: true,
     },
     bathrooms: {
@@ -39,6 +43,10 @@ const listingSchema = new mongoose.Schema(
       required: true,
     },
     type: {
+      type: String,
+      required: true,
+    },
+    type2: {
       type: String,
       required: true,
     },
