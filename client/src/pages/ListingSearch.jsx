@@ -247,12 +247,7 @@ const handleFilterChange = (e) => {
             </p>
           )}
 
-          {!loading &&
-            listings &&
-            listings.filter(listing=>listing.name.includes(query)).map((listing) => (
-              <ListingItem key={listing._id} listing={listing} />
-            ))}
-
+          
           {showMore && (
             <button
               onClick={onShowMoreClick}
