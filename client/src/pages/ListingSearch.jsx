@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
-import { Button, Checkbox, Label,  TextInput } from 'flowbite-react';
 import Select from 'react-select'
-
-
-
 
 export default function Search() {
   const navigate = useNavigate();
@@ -20,7 +16,7 @@ export default function Search() {
   ]
 
   const cityOptions = [
-    { value: 'all', label: 'الكل' },
+    {value: 'all', label: 'الكل' },
     {value: "Makkah", label:"منطقة مكة المكرمة"},
     {value: "Medina", label:"المدينة المنورة"},
     {value: "Riyadh", label:"الرياض"},
@@ -41,15 +37,11 @@ export default function Search() {
     order: 'desc',
   });
   const [query,setQuery] = useState("");
-
-
-
-
-
   const [loading, setLoading] = useState(false);
   const [listings, setListings] = useState([]);
   const [showMore, setShowMore] = useState(false);
 
+  /*
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
@@ -97,8 +89,23 @@ export default function Search() {
 
     fetchListings();
   }, [location.search]);
+   */
 
-  const handleChange = (e) => {
+  const fetchListings = async () => {
+    setLoading(true);
+    setShowMore(false);
+
+    // Build the query string based on filters
+    const params = new URLSearchParams({
+      searchTerm: sidebardata.searchTerm,
+      type: sidebardata.type,
+      parking: sidebardata.parking,
+      furnished: sidebardata.furnished,
+      offer: sidebardata.offer,
+      sort: sidebardata.sort,
+      order: sidebardata.order,
+    });
+    /*const handleChange = (e) => {
     if (
       e.target.id === 'all' ||
       e.target.id === 'rent' ||
@@ -130,8 +137,27 @@ export default function Search() {
 
       setSidebardata({ ...sidebardata, sort, order });
     }
-  };
+  }; */
+  
+  const res = await fetch(`/api/listing/get?${params}`);
+  const data = await res.json();
 
+  setListings(data);
+  setShowMore(data.length > 8);
+  setLoading(false);
+};
+
+useEffect(() => {
+  fetchListings();
+}, [sidebardata]); // Trigger re-fetch on sidebardata changes
+
+const handleFilterChange = (e) => {
+  const { id, value, checked, type } = e.target;
+  setSidebardata((prev) => ({
+    ...prev,
+    [id]: type === 'checkbox' ? checked : value,
+  }));
+};
 
 
   const onShowMoreClick = async () => {
@@ -150,19 +176,49 @@ export default function Search() {
  
 
   return (
-    <div className='flex flex-col md:flex-row'>
-      <div className='flex flex-col p-7  border-b-2 md:border-r-2 md:min-h-screen '>
+    <div className='flex flex-col md:flex-row ' >
+      <div className='flex flex-col p-7  border-b-2 md:border-r-2 md:min-h-screen ' id='arabic'>
         <label htmlFor="search" className='custom-font-color2 mb-2' id='arabic'>ابحث عن اسم عقارك هنا : </label>
-        <input type="text" id='arabic' placeholder='بحث...' onChange={e=> setQuery(e.target.value)} className="search mb-2" />
+        <input
+          type='text'
+          id='searchTerm'
+          placeholder='بحث...'
+          onChange={handleFilterChange}
+          className='search mb-2'
+        />
         <h3 id='arabic' className='mt-4 mb-2 custom-font-color2'> أو استعمل فلاتر متقدمة للبحث :</h3>
         <div className='flex justify-around items-center gap-2 '>
           <div id='arabic' className='flex items-center gap-2'>
-          <input type='radio' defaultChecked name='type'></input>
-          <label >الكل</label>
-          <input type='radio'  name='type'></input>
-          <label >بيع</label>
-          <input type='radio' name='type'></input>
-          <label >إيجار</label>
+          <label>
+            <input
+              type='radio'
+              id='type'
+              value='all'
+              checked={sidebardata.type === 'all'}
+              onChange={handleFilterChange}
+            />
+            الكل
+          </label>
+          <label>
+            <input
+              type='radio'
+              id='type'
+              value='sale'
+              checked={sidebardata.type === 'sale'}
+              onChange={handleFilterChange}
+            />
+            بيع
+          </label>
+          <label>
+            <input
+              type='radio'
+              id='type'
+              value='rent'
+              checked={sidebardata.type === 'rent'}
+              onChange={handleFilterChange}
+            />
+            إيجار
+          </label>
           </div>
          
         </div>
@@ -182,9 +238,9 @@ export default function Search() {
           العروض العقارية
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
-          {!loading && listings.length === 0 && (
-            <p className='text-xl text-gray-500'>ليس هنالك عروض حالياً</p>
-          )}
+        {!loading && listings.filter(listing => listing.name.includes(query)).map((listing) => (
+            <ListingItem key={listing._id} listing={listing} />
+          ))}
           {loading && (
             <p className='text-xl text-slate-700 text-center w-full'>
               Loading...
