@@ -10,9 +10,6 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Button, Textarea, TextInput } from 'flowbite-react';
 
-
-
-
 export default function CreateListing() {
  
   const { currentUser } = useSelector((state) => state.user);

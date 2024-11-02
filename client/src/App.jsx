@@ -30,18 +30,16 @@ export default function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/orders' element={<Orders />} />
-
         <Route path='/sign-in' element={<Signin />}/>
         <Route path='/sign-up' element={<SignUp />}/>
-        
         <Route path='/listingsearch' element={<ListingSearch />} />
         <Route path='/listing/:listingId' element={<Listing />} />
+        
+          <Route element={<PrivateRoute/>}>
+            <Route path='/search' element={<Search />}/>
+            <Route path='/dashboard' element={<Dashboard />}/>
+          </Route>
 
-
-        <Route element={<PrivateRoute/>}>
-        <Route path='/search' element={<Search />}/>
-        <Route path='/dashboard' element={<Dashboard />}/>
-        </Route>
         <Route element={<OnlyAdminPrivateRoute/>}>
         <Route path='/create-post' element={<CreatePost />}/>
         <Route path='/update-post/:postId' element={<UpdatePost />}/>
